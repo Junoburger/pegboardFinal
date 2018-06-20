@@ -5,6 +5,7 @@ export class LoginClass {
 
     this.Id = getRandomInt(10000000),
     this.body = {
+      userId: this.Id,
       email: email,
       password: password,
       name: name,

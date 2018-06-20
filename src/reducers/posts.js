@@ -4,23 +4,24 @@
 export default (state = posts, action = {}) => {
   switch(action.type){
   case 'ADD_POST':
-
+  // console.log(action.payload)
   let category = action.payload.category
-    let type = action.payload.type
-    // console.log(state[category][type], action.payload.type)
-    state[category][type].push({
-      posterId: null,
-      postBody: {
-        postId: null,
-        name: action.payload.name,
-        description: action.payload.description,
-        category: null
-      }
-    })
-
-    return {
-      ...state,
+  let type = action.payload.type
+  let rando = Math.ceil(Math.random()*100)
+  // console.log(state[category][type], action.payload.type)
+  state[category][type].push({
+    posterId: action.payload.posterId,
+    postBody: {
+      postId: rando,
+      name: action.payload.name,
+      description: action.payload.description,
+      category: category
     }
+  })
+
+  return {
+    ...state,
+  }
 
 
   default:

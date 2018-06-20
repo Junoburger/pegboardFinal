@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { makePost } from '../../actions/posts'
 import { addPost } from '../../actions/posts'
 import { LogUser } from '../../actions/users'
+import { logOut } from '../../actions/users'
+
 import NewPost from './NewPost'
 
 import User from '../User/User'
@@ -32,12 +34,13 @@ class PostContainer extends React.PureComponent {
       category: this.state.category,
       type: this.state.type,
       name: this.state.name,
-      description: this.state.description
+      description: this.state.description,
+      posterId: this.props.logUser
     })
   }
 
   componentDidMount() {
-    {console.log(this.props.users[this.props.logUser].notification.posts)}
+    // {console.log(this.props.logUser)}
     // console.log(this)
 
   }
@@ -47,39 +50,46 @@ class PostContainer extends React.PureComponent {
     return (
       <div>
 
-        <Link to={'/Notifications'} > Notificaitons</Link>
+        <Link to={'/Notifications'} > Notifications </Link>
+
+        {/* <button onClick={this.props.logOut}>Log Out</button> */}
+
+        <Link to={'/'} onClick={this.props.logOut}> Log Out </Link>
 
         <form onSubmit={this.handleSubmit}>
 
-          <label>
+          
+            <label>
+              <h1>I am a:</h1>
+              <div className="formElement">
+              <h2>Employer</h2>
+              <input type="radio" name="type" value="employer" onChange={this.handleChange}/>
 
-            <div className="formElement">
-            <h2>carpenter</h2>
-            <input type="radio" name="category" value="carpenter" onChange={this.handleChange}/>
+              <h2>Freelancer</h2>
+              <input type="radio" name="type" value="freelancer" onChange={this.handleChange}/>
+              </div>
 
-            <h2>designer</h2>
-            <input type="radio" name="category" value="designer" onChange={this.handleChange}/>
+            </label>
 
-            <h2>cook</h2>
-            <input type="radio" name="category" value="cook" onChange={this.handleChange}/>
+            <label>
+              <h1>Job Category</h1>
+              <div className="formElement">
+              <h2>carpenter</h2>
+              <input type="radio" name="category" value="carpenter" onChange={this.handleChange}/>
 
-            <h2>developer</h2>
-            <input type="radio" name="category" value="developer" onChange={this.handleChange}/>
-            </div>
+              <h2>designer</h2>
+              <input type="radio" name="category" value="designer" onChange={this.handleChange}/>
 
-          </label>
+              <h2>cook</h2>
+              <input type="radio" name="category" value="cook" onChange={this.handleChange}/>
 
-          <label>
+              <h2>developer</h2>
+              <input type="radio" name="category" value="developer" onChange={this.handleChange}/>
+              </div>
 
-            <div className="formElement">
-            <h2>Employer</h2>
-            <input type="radio" name="type" value="employer" onChange={this.handleChange}/>
+            </label>
 
-            <h2>Freelancer</h2>
-            <input type="radio" name="type" value="freelancer" onChange={this.handleChange}/>
-            </div>
 
-          </label>
 
 
           <div className="formElement">
@@ -115,8 +125,9 @@ const mapStateToProps = (state) => {
   return {
     users:state.users,
     post: state.posts,
-    logUser: state.logUser
+    logUser: state.logUser,
+    logOut: state.logOut
   }
 }
 
-export default connect(mapStateToProps, { makePost, addPost })(PostContainer)
+export default connect(mapStateToProps, { makePost, addPost, logOut })(PostContainer)
