@@ -89,6 +89,7 @@ export default(state = users, action = {}) => {
      })
 
      match[action.payload.posterId].notification.match.push(action.payload)
+     match[action.payload.requesterId].notification.match.push(action.payload)
      return match
    case 'MAKE_POST':
      const Post = JSON.parse(JSON.stringify(state))
