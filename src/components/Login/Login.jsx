@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import {Redirect} from 'react-router-dom'
 import { connect } from 'react-redux'
 import {LogUser} from '../../actions/users'
-// import { Textbox } from 'react-inputs-validation';
+import { Textbox } from 'react-inputs-validation';
 
 
 
@@ -56,18 +56,6 @@ const onEmailChange = this.onEmailChange
                name="email-address"
                id="email-address"
              onChange={this.onEmailChange}/>
-             {/* <Textbox
-  tabIndex="1" //Optional.[String or Number].Default: -1.
-  id={'email-address'} //Optional.[String].Default: "".  Input ID.
-  name="email-address" //Optional.[String].Default: "". Input name.
-  type="email" //Optional.[String].Default: "text". Input type [text, password, number].
-  // value={onEmailChange} //Optional.[String].Default: "".
-  placeholder="Place your email here ^-^" //Optional.[String].Default: "".
-  // onChange={name => this.setState({onEmailChange})} //Required.[Func].Default: () => {}. Will return the value.
-  onBlur={() => {}} //Optional.[Func].Default: none. In order to validate the value on blur, you MUST provide a function, even if it is an empty function. Missing this, the validation on blur will not work.
-
-  onChange={this.onEmailChange}
-/> */}
 
           </div>
           <div className="mv3">
