@@ -32,10 +32,10 @@ class Swiper extends Component{
 						.filter((x) => x.posterId !== this.props.user.logUser)
 						.map((x) => {
 							return (
-								<div className="actions">
+								<div className="fl w-60 ba"  >
 									<h1 key={x.posterId}>{x.postBody.description}</h1>
-									<button className="dislike-button" onClick={this.props.dislikeAction}>Dislike</button>
-									<button className="like-button" onClick={()=>{this.props.makeRequest({requesterId: this.props.user.logUser, ...x})}}>Like</button>
+									<button className="dislike-button fl w-10 bg-washed-red br3 grow" onClick={this.props.dislikeAction}>Dislike</button>
+									<button className="like-button fl w-10 bg-washed-green br3 grow" onClick={()=>{this.props.makeRequest({requesterId: this.props.user.logUser, ...x})}}>Like</button>
 								</div>
 							)
 						})
