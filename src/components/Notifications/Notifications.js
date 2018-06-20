@@ -10,11 +10,15 @@ export default function Notifications(props) {
           return <li className='requestItem' key = {props.users[req.requesterId].userId}>
             <div className='sender'>User: {props.users[req.requesterId].name}</div>
               <div className='description'>Post:{req.postBody.description}</div>
-                <button onClick ={()=>{props.accept(req)}} href={'/'} className='accept'>ACCEPT</button></li> })}</ul>
+                <button onClick ={()=>{props.accept(req)}} className='accept'>ACCEPT</button></li> })}</ul>
 
       <ul className='matchs' >{matchNotifications
         .map(req => {
-          return <li className='matchItem' key = {props.users[req.requesterId].userId}> User: {props.users[req.requesterId].name} </li> })}</ul>
+          return <li className='matchItem' key = {props.users[req.requesterId].userId}>
+          <div className='sender'>User: {props.users[req.requesterId].name}</div>
+            <div className='description'>Post:{req.postBody.description}</div>
+              <button onClick ={()=>{console.log(props.users[req.requesterId].name)}} className='info'>Contact info</button>
+            </li> })}</ul>
 
     </div>)
 

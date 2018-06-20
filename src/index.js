@@ -6,6 +6,8 @@ import store from './store'
 import {Provider} from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import 'tachyons';
+// import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap-theme.css';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
