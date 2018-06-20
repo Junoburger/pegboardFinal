@@ -38,5 +38,10 @@
 }
 
 .accept {
+  border-radius: 6px;
+  height: 70%;
+  background-color: #FA0000;
+  color: white;
+  font-weight: bold;
   margin-left: 20px;
 }
