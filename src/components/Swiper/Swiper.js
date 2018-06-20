@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import './swiper.css'
 
 
 
@@ -20,7 +21,7 @@ class Swiper extends Component{
 		console.log(this.type)
 
 		return (
-			<div className="user">
+			<div className="main mw5 mw7-ns center bg-light-gray pa3 ph5-ns">
 
 
 				<div>
@@ -32,10 +33,10 @@ class Swiper extends Component{
 						.filter((x) => x.posterId !== this.props.user.logUser)
 						.map((x) => {
 							return (
-								<div className="fl w-60 ba"  >
+								<div className="container"  >
 									<h1 key={x.posterId}>{x.postBody.description}</h1>
-									<button className="dislike-button fl w-10 bg-washed-red br3 grow" onClick={this.props.dislikeAction}>Dislike</button>
-									<button className="like-button fl w-10 bg-washed-green br3 grow" onClick={()=>{this.props.makeRequest({requesterId: this.props.user.logUser, ...x})}}>Like</button>
+									<button className="dislike-button fl w-20 bg-washed-red br3 grow" onClick={this.props.dislikeAction}>Dislike</button>
+									<button className="like-button fl w-20 bg-washed-green br3 grow" onClick={()=>{this.props.makeRequest({requesterId: this.props.user.logUser, ...x})}}>Like</button>
 								</div>
 							)
 						})
