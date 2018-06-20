@@ -1,0 +1,42 @@
+.notificationContainer {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.requests, .matchs {
+  list-style: none;
+  padding-left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 800px;
+  height: 200px;
+}
+
+.requestItem, .matchItem {
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 7px;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+
+.sender {
+  padding-left: 10px;
+  padding-right: 20px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid black;
+}
+
+.description {
+  padding-left: 20px;
+}
+
+.accept {
+  margin-left: 20px;
+}
