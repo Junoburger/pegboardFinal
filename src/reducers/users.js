@@ -91,6 +91,7 @@ export default(state = users, action = {}) => {
      const Post = JSON.parse(JSON.stringify(state))
      Post[action.payload.posterId].notification.posts.push(action.payload)
      return Post
+  
    default:
      return state
  }
