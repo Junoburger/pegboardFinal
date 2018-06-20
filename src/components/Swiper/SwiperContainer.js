@@ -6,7 +6,7 @@ import { makeRequest } from '../../actions/users'
 
 import Swiper from './Swiper'
 
-class SwiperContainer extends React.PureComponent {
+class SwiperContainer extends React.PureComponent {ya
 
   componentWillMount() {
     

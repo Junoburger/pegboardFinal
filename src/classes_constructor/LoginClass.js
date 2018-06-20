@@ -3,7 +3,7 @@ import React from 'react'
 export class LoginClass {
   constructor(email, password, name) {
 
-    this.Id = getRandomInt(1000000),
+    this.Id = getRandomInt(10000000),
     this.body = {
       userId: this.Id,
       email: email,
