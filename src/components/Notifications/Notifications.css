@@ -40,7 +40,16 @@
 .accept {
   border-radius: 6px;
   height: 70%;
-  background-color: #FA0000;
+  background-color: #00BF38;
+  color: white;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.info {
+  border-radius: 6px;
+  height: 70%;
+  background-color: #359DBB;
   color: white;
   font-weight: bold;
   margin-left: 20px;
