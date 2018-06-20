@@ -1,14 +1,18 @@
 .App {
   text-align: center;
-
 }
 
 
+.Login{
+  background-color: rgba(255, 255, 255, 0.87);
+
+}
 .Logo {
   width: 200px;
   border-radius: 20px;
   box-shadow: 0px 5px 20px rgb(135, 130, 120);
 }
+
 .formElement {
   display: flex;
   justify-content: center;
