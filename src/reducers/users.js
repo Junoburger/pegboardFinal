@@ -2,6 +2,8 @@ const users = {
  1: {
    userId: 1,
    name: 'jose',
+   email: 'jose@email.com',
+   password: '123',
    notification: {
      match: [],
      request: [
@@ -10,7 +12,7 @@ const users = {
          posterId: 1,
          postBody: {
            postId: 1,
-           description: 'looking for somebody',
+           description: 'looking for a somebody',
            category: 'cooking'
          }
        }, {
@@ -18,14 +20,14 @@ const users = {
          posterId: 1,
          postBody: {
            postId: 1,
-           description: 'looking for somebody',
+           description: 'looking for a somebody',
            category: 'cooking'
          }
        }, {
          requesterId: 4,
          posterId: 1,
          postBody: {
-           postId: 1,
+           postId: 2,
            description: 'looking for somebody',
            category: 'cooking'
          }
@@ -47,7 +49,7 @@ const users = {
  },
  3: {
    userId: 3,
-   name: 'maria',
+   name: 'carlos',
    notification: {
      match: [],
      request: [],
@@ -56,7 +58,7 @@ const users = {
  },
  4: {
    userId: 4,
-   name: 'maria',
+   name: 'fernadndo',
    notification: {
      match: [],
      request: [],
@@ -82,7 +84,8 @@ export default(state = users, action = {}) => {
    case 'MAKE_MATCH':
      const match = JSON.parse(JSON.stringify(state))
      match[action.payload.posterId].notification.request = match[action.payload.posterId].notification.request.filter((reqItem) => {
-       return (reqItem.postBody.postId !== action.payload.postBody.postId)
+       return (reqItem.postBody.postId !== action.payload.postBody.postId && reqItem.requesterId !== action.payload.requesterId ||
+         reqItem.postBody.postId === action.payload.postBody.postId && reqItem.requesterId !== action.payload.requesterId)
      })
 
      match[action.payload.posterId].notification.match.push(action.payload)
