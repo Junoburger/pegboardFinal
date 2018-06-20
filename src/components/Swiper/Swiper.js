@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './swiper.css'
 import { Link, Redirect } from 'react-router-dom';
+
 
 class Swiper extends Component{
 
@@ -50,19 +52,17 @@ class Swiper extends Component{
 		.filter((x) => x.posterId !== this.props.user.logUser)
 
 		return (
-			<div className="user">
+			<div className="main mw5 mw7-ns center bg-light-gray pa3 ph5-ns measure-narrow">
 
 
 				<div>
 
 					{
-
 						<div className="fl w-60 ba"  >
 							<h1 key={holder[this.state.index].posterId}>{holder[this.state.index].postBody.description}</h1>
 				 			<button className="dislike-button fl w-10 bg-washed-red br3 grow" onClick={this.decline}>Dislike</button>
 				 			<button className="like-button fl w-10 bg-washed-green br3 grow" onClick={() => this.increment(holder)}>Like</button>
 						</div>
-
 					}
 
 				</div>
