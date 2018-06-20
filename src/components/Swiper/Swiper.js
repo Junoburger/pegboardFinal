@@ -21,7 +21,7 @@ class Swiper extends Component{
 		console.log(this.type)
 
 		return (
-			<div className="main mw5 mw7-ns center bg-light-gray pa3 ph5-ns">
+			<div className="main mw5 mw7-ns center bg-light-gray pa3 ph5-ns measure-narrow">
 
 
 				<div>
