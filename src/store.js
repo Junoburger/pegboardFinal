@@ -10,13 +10,13 @@ const enhancer = compose(
 )
 
 
-const persistedState = localStorage.getItem('reduxState') ? JSON.parse(localStorage.getItem('reduxState')) : {}
+const persistedState = sessionStorage.getItem('reduxState') ? JSON.parse(sessionStorage.getItem('reduxState')) : {}
 
 const store = createStore(reducer, persistedState, enhancer)
 
 
 store.subscribe(()=>{
-  localStorage.setItem('reduxState', JSON.stringify(store.getState()))
+  sessionStorage.setItem('reduxState', JSON.stringify(store.getState()))
 })
 
 export default store
