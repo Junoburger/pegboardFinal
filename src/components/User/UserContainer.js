@@ -13,7 +13,7 @@ class UserContainer extends React.PureComponent {
     return (
       <div>
 
-        <User properties={this.props} matchParams={this.props.match.params}/>
+        <User properties={this.props} matchParams={this.props.match.params} isAccepted={false}/>
 
       </div>
     )

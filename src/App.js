@@ -24,7 +24,7 @@ class App extends Component {
       <Route exact="exact" path="/home" component={PostContainer}/>
       <Route exact="exact" path="/matcher/:category/:type" component={SwiperContainer}/>
       <Route exact="exact" path="/Notifications" component={NotificationsContainer}/>
-      <Route exact="exact" path="/User" component={UserContainer}/>
+      <Route exact="exact" path="/User/:userid/:accepted" component={UserContainer}/>
 
     </div></div>);
   }
