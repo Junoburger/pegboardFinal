@@ -48,7 +48,7 @@ if(userLogin.length === 1){
     return (<div className="shape">
       <img src={logo} alt="PegBoardLogo" className="Logo"/><br/><br/>
       <span className="Slogan">Your Place For Freelance Jobs</span>
-      <article className="br4 b--black-10 mv4 w-200 mw6 sqrComp center">
+      <form     onSubmit={this.onSubmitLogin} className="br4 b--black-10 mv4 w-200 mw6 sqrComp center">
       <main className="pa4 black-80">
         <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
           <legend style={{backgroundColor:'rgba(255, 255, 255, 0.47)', padding:'20px',borderRadius: '20px'}} className="f1 fw6 ph0 mh0">Sign In</legend>
@@ -75,7 +75,6 @@ if(userLogin.length === 1){
           <input className="b br3 ph3 pv2 input-reset bn white bg-blue grow pointer f4 dib"
             type="submit"
             value="Sign in"
-            onClick={this.onSubmitLogin}
             />
         </div>
         <div className="mv3">
@@ -88,7 +87,7 @@ if(userLogin.length === 1){
         </div>
       </main>
       <div>{this.state.loginToHome === true && < Redirect to = '/home' />}</div>
-    </article></div>);
+    </form></div>);
   }
 }
 
