@@ -5,6 +5,9 @@ import {newUser} from '../../actions/users'
 import {Redirect} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { LogUser } from '../../actions/users'
+import './LoginStyle.css'
+import logo from '../../images/pegboard.png'
+
 
 
 class Register extends React.Component {
@@ -31,15 +34,21 @@ class Register extends React.Component {
   }
   render() {
 
-    return (<article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
+    return (<div className="shape">
+      <img src={logo} alt="PegBoardLogo" className="Logo"/>
+
+
+      <article className="br3  b--black-10 mv4 w-100 w-50-m w-25-l mw6 sqrComp center">
+
       <main className="pa4 black-80">
         <div className="measure">
           <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-            <legend className="f1 fw6 ph0 mh0">Register</legend>
+            <legend style={{backgroundColor:'white', padding:'20px',borderRadius: '20px'}}
+               className="f1 fw6 ph0 mh0">Register</legend>
             <div className="mt3">
               <label className="db fw6 lh-copy f6" htmlFor="name">Name</label>
               <input
-                className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                className="pa2 br3 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                 type="text"
                 name="name"
                 id="name"
@@ -48,7 +57,7 @@ class Register extends React.Component {
             <div className="mt3">
               <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
               <input
-                className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                className="pa2 br3 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                 type="email"
                  name="email-address"
                   id="email-address"
@@ -56,7 +65,7 @@ class Register extends React.Component {
             </div>
             <div className="mv3">
               <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
-              <input className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+              <input className="b br3  pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                 type="password"
                 name="password"
                 id="password"
@@ -64,7 +73,7 @@ class Register extends React.Component {
             </div>
           </fieldset>
           <div className="">
-            <input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
+            <input className="b br3 ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
               type="submit"
               value="Register"
               onClick={this.onSubmitLogin}/>
@@ -77,7 +86,9 @@ class Register extends React.Component {
       </main>
       <div>{this.state.loginToHome === true && < Redirect to = '/home' />}</div>
 
-    </article>);
+    </article>
+</div>
+  );
   }
 
 }
