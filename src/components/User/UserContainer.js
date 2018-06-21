@@ -13,7 +13,7 @@ class UserContainer extends React.PureComponent {
     return (
       <div>
 
-        <User properties={this.props} isAccepted={false}/>
+        <User user={this.props.user} id={this.props.match.params.userid} isAccepted={this.props.match.params.accepted}/>
 
       </div>
     )
@@ -22,7 +22,7 @@ class UserContainer extends React.PureComponent {
 
 const mapStateToProps = (state) => {
   return {
-    user: state
+    user: state.users
   }
 }
 

@@ -5,7 +5,7 @@ import './user.css'
 
 export default function User(props) {
 
-  console.log(props)
+  console.log(props.user)
 
   return (
 
@@ -18,12 +18,12 @@ export default function User(props) {
       <div className="displayUser">
 
         <div className="userInfo">
-          <h1>Name: { props.properties.user.users[props.properties.match.params.userid].name }</h1>
-          <h1>User ID: { props.properties.user.users[props.properties.match.params.userid].userId }</h1>
+          <h1>Name: { props.user[props.id].name }</h1>
+          <h1>User ID: { props.user[props.id].userId }</h1>
         </div>
 
         {/* CHANGE THIS TO TRUE WHEN LINKED WITH NOTIFICATIONS PAGE */}
-        <h1>{ props.isAccepted === false && props.properties.user.users[props.properties.match.params.userid].email }</h1>
+        <h1>{ props.isAccepted  && props.user[props.id].email }</h1>
 
       </div>
 
