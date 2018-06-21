@@ -1,6 +1,6 @@
 import React from 'react';
 import SwipeableViews from 'react-swipeable-views';
-import Cards, { Card } from 'react-swipe-card'
+
 
 const styles = {
   slide: {
@@ -29,9 +29,13 @@ function Slide(props) {
   const holder = props.data
   return (
 
-    <SwipeableViews enableMouseEvents>
+    <SwipeableViews  enableMouseEvents on ={(index, indexLatest, meta)=> props.makerequest(holder,index-1)}>
 
-      {holder.map((user, index) => { return <div style={Object.assign({}, styles.slide, styles[index])}>{props.users[user.posterId].name}</div> })}
+      {holder.map((user, index) => { return <div style={Object.assign({}, styles.slide, styles[index])}>
+        <p>{props.users[user.posterId].userId}</p>
+        <p>{props.users[user.posterId].name}</p>
+        <p>{props.users[user.posterId].email}</p>
+      </div> })}
 
     </SwipeableViews>
   );
