@@ -5,9 +5,6 @@ import {newUser} from '../../actions/users'
 import {Redirect} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { LogUser } from '../../actions/users'
-import './LoginStyle.css'
-import logo from '../../images/pegboard.png'
-
 
 
 class Register extends React.Component {
@@ -34,51 +31,40 @@ class Register extends React.Component {
   }
   render() {
 
-    return (<div className="shape">
-      <img src={logo} alt="PegBoardLogo" className="Logo"/><br/><br/>
-
-      <span className="Slogan">Your career switch</span>
-
-      <article className="br3  b--black-10 mv4 w-100 w-50-m w-25-l mw6 sqrComp center">
-
+    return (<article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
       <main className="pa4 black-80">
         <div className="measure">
           <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-            <legend style={{backgroundColor:'rgba(255, 255, 255, 0.47)', padding:'20px',borderRadius: '20px'}}
-               className="f1 fw6 ph0 mh0">Register</legend>
+            <legend className="f1 fw6 ph0 mh0">Register</legend>
             <div className="mt3">
-              <i class="far fa-user"></i>
+              <label className="db fw6 lh-copy f6" htmlFor="name">Name</label>
               <input
-                className="pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100 superBox"
+                className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                 type="text"
                 name="name"
-                placeholder="Name"
-
                 id="name"
                 onChange={this.onNameChange}/>
             </div>
             <div className="mt3">
-              <i class="far fa-envelope"></i>
+              <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
               <input
-                className="pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100 superBox "
+                className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                 type="email"
                  name="email-address"
                   id="email-address"
-                  placeholder="E-mail"
                   onChange={this.onEmailChange}/>
             </div>
             <div className="mv3">
-              <i class="fas fa-lock"></i>
-              <input className="b  pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100  superBox"
+              <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
+              <input className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                 type="password"
                 name="password"
                 id="password"
-                placeholder="Password"
                  onChange={this.onPasswordChange}/>
             </div>
           </fieldset>
           <div className="">
-            <input className="b br3 ph3 pv2 input-reset ba white bg-green grow pointer f4 dib"
+            <input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
               type="submit"
               value="Register"
               onClick={this.onSubmitLogin}/>
@@ -91,9 +77,7 @@ class Register extends React.Component {
       </main>
       <div>{this.state.loginToHome === true && < Redirect to = '/home' />}</div>
 
-    </article>
-</div>
-  );
+    </article>);
   }
 
 }
