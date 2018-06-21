@@ -3,20 +3,17 @@ import { connect } from 'react-redux'
 
 import User from './User'
 
-class PostContainer extends React.PureComponent {
+class UserContainer extends React.PureComponent {
 
   componentDidMount() {
-
+    // console.log(this.props)
   }
 
   render() {
     return (
       <div>
 
-        <User
-          key={this.props.userId}
-          name={this.props.name}
-          bio={this.props.bio}/>
+        <User user={this.props.user} id={this.props.match.params.userid} isAccepted={this.props.match.params.accepted}/>
 
       </div>
     )
@@ -25,8 +22,8 @@ class PostContainer extends React.PureComponent {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user
+    user: state.users
   }
 }
 
-export default connect(mapStateToProps, {  })(PostContainer)
+export default connect(mapStateToProps, {  })(UserContainer)
