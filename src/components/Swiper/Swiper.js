@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './swiper.css'
 import { Link, Redirect } from 'react-router-dom';
+import Cards, { Card } from 'react-swipe-card'
 
 
 class Swiper extends Component{
@@ -60,8 +61,8 @@ class Swiper extends Component{
 					{
 						<div className="fl w-60 ba"  >
 							<h1 key={holder[this.state.index].posterId}>{holder[this.state.index].postBody.description}</h1>
-				 			<button className="dislike-button fl w-10 bg-washed-red br3 grow" onClick={this.decline}>Dislike</button>
-				 			<button className="like-button fl w-10 bg-washed-green br3 grow" onClick={() => this.increment(holder)}>Like</button>
+				 			<button className="dislike-button fl w-30 bg-washed-red br3 grow" onClick={this.decline}>Dislike</button>
+				 			<button className="like-button fl w-30 bg-washed-green br3 grow" onClick={() => this.increment(holder)}>Like</button>
 						</div>
 					}
 
