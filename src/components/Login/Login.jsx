@@ -46,26 +46,29 @@ if(userLogin.length === 1){
   render() {
 
     return (<div className="shape">
-      <img src={logo} alt="PegBoardLogo" className="Logo"/><br/><br/>
-      <span className="Slogan">Your Place For Freelance Jobs</span>
+
       <form     onSubmit={this.onSubmitLogin} className="br4 b--black-10 mv4 w-200 mw6 sqrComp center">
+        <img src={logo} alt="PegBoardLogo" className="Logo"/><br/><br/>
+        <span className="Slogan">The Place For Freelance Jobs</span>
       <main className="pa4 black-80">
         <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
           <legend style={{backgroundColor:'rgba(255, 255, 255, 0.47)', padding:'20px',borderRadius: '20px'}} className="f1 fw6 ph0 mh0">Sign In</legend>
           <div className="mt3">
-            <i class="far fa-envelope"></i>
+            <label htmlFor="email"><i class="far fa-envelope"></i></label>
             <input className="b  pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100 superBox"
               type="email"
                name="email-address"
                id="email-address"
                placeholder="E-mail"
+               required="required"
              onChange={this.onEmailChange}/>
           </div>
           <div className="mv3">
-            <i class="fas fa-lock"></i>
+            <label htmlFor="password"><i class="fas fa-lock"></i></label>
             <input className="b  pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100 superBox"
               type="password"
                name="password"
+               required="required"
                placeholder="Password"
                 id="password"
               onChange={this.onPasswordChange}/>

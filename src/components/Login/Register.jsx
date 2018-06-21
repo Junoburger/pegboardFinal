@@ -37,12 +37,11 @@ class Register extends React.Component {
 
 
      <div className="shape">
-     <img src={logo} alt="PegBoardLogo" className="Logo"/><br/><br/>
-
-     <span className="Slogan">Your career switch</span>
 
      <form  onSubmit={this.onSubmitLogin} className="br3  b--black-10 mv4 w-100 mw6 sqrComp center">
+       <img src={logo} alt="PegBoardLogo" className="Logo"/><br/><br/>
 
+       <span className="Slogan">The Place For Freelance Jobs</span>
      <main className="pa4 black-80">
        <div className="measure">
          <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
@@ -55,7 +54,7 @@ class Register extends React.Component {
                type="text"
                name="name"
                placeholder="Name"
-
+               required="required"
                id="name"
                onChange={this.onNameChange}/>
            </div>
@@ -76,21 +75,22 @@ class Register extends React.Component {
                type="password"
                name="password"
                id="password"
+               required="required"
                placeholder="Password"
                 onChange={this.onPasswordChange}/>
            </div>
          </fieldset>
          <div className="">
-           <input className="b br3 ph3 pv2 input-reset ba white bg-green grow pointer f4 dib"
+           <input className="b br3 ph3 pv2 input-reset ba white bg-blue grow pointer f4 dib"
              type="submit"
-             value="Register"
+             value="Sign Up"
             />
 
          </div>
 
        </div>
        <br/>
-       <Link className="link underline green hover-orange" to="/">Already A Member?</Link>
+       <Link className="link underline blue hover-orange" to="/">Already A Member?</Link>
 
      </main>
      <div>{this.state.loginToHome === true && < Redirect to = '/home' />}</div>
