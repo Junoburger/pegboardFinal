@@ -8,8 +8,10 @@ import { LogUser } from '../../actions/users'
 import { logOut } from '../../actions/users'
 
 import NewPost from './NewPost'
-
+import logo from '../../images/pegboard.png'
 import User from '../User/User'
+
+import './posts.css'
 
 class PostContainer extends React.PureComponent {
 
@@ -48,70 +50,83 @@ class PostContainer extends React.PureComponent {
   render() {
     const some = this.props.users[this.props.logUser].notification.posts
     return (
-      <div>
+      <div className="bg-white">
 
-        <Link to={'/Notifications'} > Notifications </Link>
+        <div className="linkContainer">
+          <Link to={'/Notifications'} className="postLink notification"> Notifications </Link>
+          <Link to={'/User'} className="postLink"> Profile </Link>
 
-        {/* <button onClick={this.props.logOut}>Log Out</button> */}
+          <Link to={'/'} onClick={this.props.logOut} className="postLink logout"> Log Out </Link>
+        </div>
 
-        <Link to={'/'} onClick={this.props.logOut}> Log Out </Link>
+        <img src={logo} alt="PegBoardLogo" className="postLogo"/>
+
+        <h3>Use the form below to create a post!</h3>
 
         <form onSubmit={this.handleSubmit}>
 
-          
-            <label>
-              <h1>I am a:</h1>
-              <div className="formElement">
-              <h2>Employer</h2>
-              <input type="radio" name="type" value="employer" onChange={this.handleChange}/>
 
-              <h2>Freelancer</h2>
-              <input type="radio" name="type" value="freelancer" onChange={this.handleChange}/>
+            <div className="">
+
+
+              <div className="postForm">
+
+                  <div className="formFlex">
+                    <h3 className="form-inline">I am a:</h3>
+                  </div>
+
+                  <div className="formFlex">
+                    <p className="form-inline">Employer <input type="radio" name="type" value="employer" onChange={this.handleChange}/></p>
+
+                    <p className="form-inline">Freelancer <input type="radio" name="type" value="freelancer" onChange={this.handleChange}/></p>
+                  </div>
+
               </div>
 
-            </label>
 
-            <label>
-              <h1>Job Category</h1>
-              <div className="formElement">
-              <h2>carpenter</h2>
-              <input type="radio" name="category" value="carpenter" onChange={this.handleChange}/>
 
-              <h2>designer</h2>
-              <input type="radio" name="category" value="designer" onChange={this.handleChange}/>
+              <div className="postForm">
 
-              <h2>cook</h2>
-              <input type="radio" name="category" value="cook" onChange={this.handleChange}/>
+                <div className="formFlex">
+                  <h3 className="form-inline">Job Category:</h3>
+                </div>
 
-              <h2>developer</h2>
-              <input type="radio" name="category" value="developer" onChange={this.handleChange}/>
+                <div className="formFlex">
+                  <p className="form-inline">Carpenter <input type="radio" name="category" value="carpenter" onChange={this.handleChange}/></p>
+
+                  <p className="form-inline">Designer <input type="radio" name="category" value="designer" onChange={this.handleChange}/></p>
+
+                  <p className="form-inline">Cook <input type="radio" name="category" value="cook" onChange={this.handleChange}/></p>
+
+                  <p className="form-inline">Developer <input type="radio" name="category" value="developer" onChange={this.handleChange}/></p>
+                </div>
+
               </div>
 
-            </label>
 
 
 
+              <div className="formElement">
+                <div className="textAreaElement">
+                  <h4>Post Title:</h4>
+                  <textarea type="text" name="name" onChange={this.handleChange} className="db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2"></textarea>
+                </div>
 
-          <div className="formElement">
-              <label>
-              Name:
-              <input type="text" name="name" onChange={this.handleChange}/>
-            </label>
+                <div className="textAreaElement">
+                  <h4>Post Description:</h4>
+                  <textarea type="text" name="description" onChange={this.handleChange} className="db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2"></textarea>
+                </div>
+              </div>
 
-            <label>
-              Description:
-              <input type="text" name="description" onChange={this.handleChange}/>
-            </label>
-          </div>
-
-          <input type="submit" value="Submit" />
+              <input type="submit" value="Submit" className="submitButton"/>
+            </div>
 
         </form>
 
-        <div>
+        <div className="categoryButtonContainer">
           {!some && 'loading'}
           {some && some.map(post => {
-            return <Link to = {`/matcher/${post.postBody.category}/${post.postBody.type}`}><button key = {post.postBody.postId}>{post.postBody.category}</button></Link>
+            return <Link to = {`/matcher/${post.postBody.category}/${post.postBody.type}`} className="categoryLink"><button key={post.postBody.postId} className="categoryButton">{post.postBody.category} - ({post.postBody.type})</button></Link>
           })}
 
         </div>

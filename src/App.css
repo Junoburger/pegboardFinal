@@ -14,13 +14,20 @@
 
 }
 
+.App-container{
+  text-align: center;
+}
 
+.Login{
+  background-color: rgba(255, 255, 255, 0.87);
+  border-bottom: #408AB4 dotted 5px;
+  border-top: #408AB4 dotted 5px;
+
+
+}
 .Logo {
-  width: 200px;
+  width: 160px;
   border-radius: 20px;
   box-shadow: 0px 5px 20px rgb(135, 130, 120);
-}
-.formElement {
-  display: flex;
-  justify-content: center;
+
 }
