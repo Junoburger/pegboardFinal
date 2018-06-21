@@ -6,14 +6,14 @@ import User from './User'
 class UserContainer extends React.PureComponent {
 
   componentDidMount() {
-    // console.log(this)
+    // console.log(this.props)
   }
 
   render() {
     return (
       <div>
 
-        <User properties={this.props.user}/>
+        <User properties={this.props} matchParams={this.props.match.params}/>
 
       </div>
     )
