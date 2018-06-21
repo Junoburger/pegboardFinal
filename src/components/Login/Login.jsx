@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import {Redirect} from 'react-router-dom'
 import { connect } from 'react-redux'
 import {LogUser} from '../../actions/users'
+import logo from '../../images/pegboard.png'
 
 
 
@@ -24,7 +25,6 @@ class Login extends React.Component {
   onPasswordChange = (event) => {
     this.setState({LoginPassword: event.target.value})
   }
-
   onSubmitLogin = (e) => {
     e.preventDefault()
     console.log(this.state.LoginMail)
@@ -43,12 +43,13 @@ if(userLogin.length === 1){
 
   }
   render() {
-const onEmailChange = this.onEmailChange
-    return (<article className="br4  b--black-10 mv4 w-200 w-50-m w-25-l mw6  center">
-      <main className="pa4 black-80">
 
+    return (<div className="shape">
+      <img src={logo} alt="PegBoardLogo" className="Logo"/>
+      <article className="br4 b--black-10 mv4 w-200 w-50-m w-25-l mw6 sqrComp center">
+      <main className="pa4 black-80">
         <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-          <legend className="f1 fw6 ph0 mh0">Sign In</legend>
+          <legend style={{backgroundColor:'white', padding:'20px',borderRadius: '20px'}} className="f1 fw6 ph0 mh0">Sign In</legend>
           <div className="mt3">
             <label className="db fw6 lh-copy f4" htmlFor="email-address">Email</label>
             <input className="b br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
@@ -56,7 +57,6 @@ const onEmailChange = this.onEmailChange
                name="email-address"
                id="email-address"
              onChange={this.onEmailChange}/>
-
           </div>
           <div className="mv3">
             <label className="db fw6 lh-copy f4" htmlFor="password">Password</label>
@@ -85,7 +85,7 @@ const onEmailChange = this.onEmailChange
         </div>
       </main>
       <div>{this.state.loginToHome === true && < Redirect to = '/home' />}</div>
-    </article>);
+    </article></div>);
   }
 }
 

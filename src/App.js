@@ -3,7 +3,6 @@ import './App.css';
 import {Route} from 'react-router-dom'
 import Login from './components/Login/Login'
 import Register from './components/Login/Register'
-import logo from './images/pegboard.png'
 
 import PostContainer from './components/Posts/PostContainer'
 import SwiperContainer from './components/Swiper/SwiperContainer'
@@ -13,8 +12,10 @@ import NotificationsContainer from './components/Notifications/NotificationsCont
 
 class App extends Component {
   render() {
-    return (<div className="App">
-      {/* <img src={logo} alt="PegBoardLogo" className="Logo"/> */}
+    return (
+      <div className="App-container">
+        <div className="App">
+
       <div className="Login">
         <Route exact="exact" path="/" component={Login}/>
         <Route path="/Register" component={Register}/>
@@ -24,7 +25,7 @@ class App extends Component {
       <Route exact="exact" path="/Notifications" component={NotificationsContainer}/>
       <Route exact="exact" path="/User" component={UserContainer}/>
 
-    </div>);
+    </div></div>);
   }
 }
 
