@@ -13,9 +13,12 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
-    "react-swipe-card": "^0.1.4",
+    "react-swipe": "^5.1.1",
+    "react-swipe-card": "0.1.4",
+    "react-swipeable-views": "^0.12.14",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
+    "swipe-js-iso": "^2.0.4",
     "tachyons": "^4.10.0"
   },
   "scripts": {

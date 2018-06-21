@@ -1,23 +1,23 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
-
 import { makeRequest } from '../../actions/users'
-
 import Swiper from './Swiper'
+
+
 
 class SwiperContainer extends React.PureComponent {ya
 
   componentWillMount() {
-    
+
 	}
 
 	renderUser() {
 		return (
 			<div>
         <Link to={'/home'}> Back to main page </Link>
-				<Swiper user={this.props.user} matchParams={this.props.match.params} makeRequest={this.props.makeRequest}/>
-			</div>
+        <Swiper user={this.props.user} matchParams={this.props.match.params} makeRequest={this.props.makeRequest}/>
+      </div>
 		);
 	}
 

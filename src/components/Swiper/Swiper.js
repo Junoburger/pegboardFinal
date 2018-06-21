@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './swiper.css'
 import { Link, Redirect } from 'react-router-dom';
-import Cards, { Card } from 'react-swipe-card'
+import MyComponent from './MyComponent'
 
 
 class Swiper extends Component{
@@ -33,6 +33,9 @@ class Swiper extends Component{
 	}
 
 	render() {
+
+
+
 		const category = this.props.matchParams.category
 
 		let type = this.props.matchParams.type
@@ -47,28 +50,40 @@ class Swiper extends Component{
 			return <Redirect to={'/home'}></Redirect>
 		}
 
-		console.log(this.type)
+
 
 		const holder = this.props.user.posts[category][type]
 		.filter((x) => x.posterId !== this.props.user.logUser)
 
+
+
 		return (
-			<div className="main mw5 mw7-ns center bg-light-gray pa3 ph5-ns measure-narrow">
 
 
+
+
+		<div className="main mw5 mw7-ns center bg-light-gray pa3 ph5-ns measure-narrow">
+			{
 				<div>
-
 					{
 						<div className="fl w-60 ba"  >
+							<MyComponent holder={holder} />
 							<h1 key={holder[this.state.index].posterId}>{holder[this.state.index].postBody.description}</h1>
-				 			<button className="dislike-button fl w-30 bg-washed-red br3 grow" onClick={this.decline}>Dislike</button>
-				 			<button className="like-button fl w-30 bg-washed-green br3 grow" onClick={() => this.increment(holder)}>Like</button>
+							<button className="dislike-button fl w-30 bg-washed-red br3 grow" onClick={this.decline}>Dislike</button>
+							<button className="like-button fl w-30 bg-washed-green br3 grow" onClick={() => this.increment(holder)}>Like</button>
+
 						</div>
+
 					}
 
 				</div>
+			}
+
+
 			</div>
+
 		)
+
 	}
 }
 
