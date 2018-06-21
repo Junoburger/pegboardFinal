@@ -9,7 +9,6 @@ import { logOut } from '../../actions/users'
 
 import NewPost from './NewPost'
 import logo from '../../images/pegboard.png'
-import User from '../User/User'
 
 import './posts.css'
 
