@@ -18,7 +18,7 @@ export default function User(props) {
         <h1>Accepted: {props.matchParams.accepted}</h1>
 
 
-        <h1>Array User: {props.properties.user.users}</h1>
+        <h1>Array User: {props.properties.user.users.userId}</h1>
 
       </div>
 
