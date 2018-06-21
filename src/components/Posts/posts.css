@@ -1,0 +1,77 @@
+.postLogo {
+  width: 150px;
+  border-radius: 20px;
+}
+
+.linkContainer {
+  padding: 20px;
+}
+
+.postLink, .postLink:active, .postlink:visited  {
+  text-decoration: none;
+  padding: 30px;
+  color: black;
+}
+
+.postLink:hover {
+  text-decoration: none;
+  color: blue;
+}
+
+.notification {
+  float: left;
+}
+
+.logout {
+  float: right;
+}
+
+.postForm {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.formFlex {
+  border: 3px solid black;
+  width: 40%;
+  border-radius: 25px;
+}
+
+.form-inline {
+  text-align: center;
+  padding: 10px;
+}
+
+.formElement {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.textAreaElement {
+  width: 40%
+}
+
+.submitButton {
+  color: white;
+  border-radius: 25px;
+	padding:		20px 40px !important;
+  margin-top: 20px;
+	background-color:	#408AB4;
+	font-weight:		bold;
+}
+
+
+.categoryButton {
+ text-transform: capitalize;
+ padding: 10px;
+ background-color: white;
+ border: 3px solid black;
+ margin-bottom: 20px;
+}
+
+.categoryButtonContainer {
+  padding: 20px;
+}
