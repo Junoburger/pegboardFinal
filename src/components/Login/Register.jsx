@@ -39,7 +39,7 @@ class Register extends React.Component {
 
       <span className="Slogan">Your career switch</span>
 
-      <article className="br3  b--black-10 mv4 w-100 w-50-m w-25-l mw6 sqrComp center">
+      <article className="br3  b--black-10 mv4 w-100 w-25-l mw6 sqrComp center">
 
       <main className="pa4 black-80">
         <div className="measure">
