@@ -47,7 +47,7 @@ if(userLogin.length === 1){
 
     return (<div className="shape">
       <img src={logo} alt="PegBoardLogo" className="Logo"/><br/><br/>
-      <span className="Slogan">Your career switch</span>
+      <span className="Slogan">Your Place For Freelance Jobs</span>
       <article className="br4 b--black-10 mv4 w-200 mw6 sqrComp center">
       <main className="pa4 black-80">
         <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
@@ -82,11 +82,8 @@ if(userLogin.length === 1){
 
           <span className="f4">Or</span><br/><br/>
 
-          <Link  to="/Register"><input
-             className="b br3 ph3 pv2 input-reset ba white bg-green grow pointer f4 dib"
-            name="Register-redirect"
-            id="Register-redirect"
-             type="button" value="Register"/></Link>
+          <Link    className="b br3 ph3 pv2ba blue  grow pointer f4 dib"
+              to="/Register">Sign Up</Link>
 
         </div>
       </main>
