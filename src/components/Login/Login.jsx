@@ -44,7 +44,7 @@ if(userLogin.length === 1){
   }
   render() {
 const onEmailChange = this.onEmailChange
-    return (<article className="br4 ba b--black-10 mv4 w-200 w-50-m w-25-l mw6 shadow-5 center">
+    return (<article className="br4  b--black-10 mv4 w-200 w-50-m w-25-l mw6  center">
       <main className="pa4 black-80">
 
         <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
