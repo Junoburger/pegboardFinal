@@ -114,7 +114,7 @@
   background-color: rgba(0, 0, 0, 0);
   color: white;
   margin-right: 0;
-  font-size: 30px;
+  font-size: 12px;
   color: #82868B;
   margin-left: 20px;
   cursor:pointer;
@@ -154,6 +154,7 @@
   border: 3px solid #5B84BC;
   border-radius: 50%;
   margin-left: 20px;
+  overflow: hidden;
 }
 
 
@@ -172,7 +173,6 @@
 
 /* The switch - the box around the slider */
 .switch {
-
   position: relative;
   display: inline-block;
   width: 40px;
@@ -235,9 +235,7 @@ input:checked + .slider:before {
   font-size: 10px;
 }
 
-.logout {
-  padding-top: 10px;
-}
+
 
 .headerImg {
   width: 150px;
