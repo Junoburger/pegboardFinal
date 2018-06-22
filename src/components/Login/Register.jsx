@@ -44,6 +44,7 @@ class Register extends React.Component {
 
      <div className="shape">
      <form  onSubmit={this.onSubmitLogin} className="br3  b--black-10 mv4 w-100 mw6 sqrComp center">
+
        <img src={logo} alt="PegBoardLogo" className="Logo"/><br/><br/>
 
        <span className="Slogan">The Place For Freelance Jobs</span>
