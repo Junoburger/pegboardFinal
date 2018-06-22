@@ -13,7 +13,7 @@ const enhancer = compose(
 
 const persistedState = sessionStorage.getItem('reduxState') ? JSON.parse(sessionStorage.getItem('reduxState')) : {}
 
-const store = createStore(reducer, persistedState, enhancer)
+const store = createStore(reducer, persistedState, enhancers)
 
 
 store.subscribe(()=>{

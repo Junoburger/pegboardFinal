@@ -8,7 +8,7 @@
 
 
 .container{
-  background-color: #C4C4C4;
+  /* background-color: #C4C4C4; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,7 +70,10 @@
   border-radius: 50%;
   position: relative;
   /* left: 30px; */
-  top: 30px;
+  /* top: -250px; */
+  top: 10px;
+  /* bottom: -250px; */
+  /* margin-top */
   z-index: 100;
 }
 
