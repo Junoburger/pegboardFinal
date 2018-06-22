@@ -29,12 +29,12 @@ function Slide(props) {
   const holder = props.data
   return (
 
-    <SwipeableViews  enableMouseEvents on ={(index, indexLatest, meta)=> props.makerequest(holder,index-1)}>
+    <SwipeableViews  enableMouseEvents onChangeIndex ={(index, indexLatest, meta)=> {props.increment(index)}}>
 
       {holder.map((user, index) => { return <div style={Object.assign({}, styles.slide, styles[index])}>
-        <p>{props.users[user.posterId].userId}</p>
-        <p>{props.users[user.posterId].name}</p>
-        <p>{props.users[user.posterId].email}</p>
+        <h2>{props.users[user.posterId].userId}</h2>
+        <h2>{props.users[user.posterId].name}</h2>
+        <h2>{props.users[user.posterId].email}</h2>
       </div> })}
 
     </SwipeableViews>
