@@ -46,51 +46,48 @@ if(userLogin.length === 1){
   render() {
 
     return (<div className="shape">
-
-      <form     onSubmit={this.onSubmitLogin} className="br4 b--black-10 mv4 w-200 mw6 sqrComp center">
-        <img src={logo} alt="PegBoardLogo" className="Logo"/><br/><br/>
-        <span className="Slogan">The Place For Freelance Jobs</span>
+      <img src={logo} alt="PegBoardLogo" className="Logo"/><br/><br/>
+      <span className="Slogan">Your career switch</span>
+      <article className="br4 b--black-10 mv4 w-200 mw6 sqrComp center">
       <main className="pa4 black-80">
         <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
           <legend style={{backgroundColor:'rgba(255, 255, 255, 0.47)', padding:'20px',borderRadius: '20px'}} className="f1 fw6 ph0 mh0">Sign In</legend>
           <div className="mt3">
-            <label htmlFor="email"><i className="far fa-envelope"></i></label>
+            <i class="far fa-envelope"></i>
             <input className="b  pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100 superBox"
               type="email"
                name="email-address"
                id="email-address"
                placeholder="E-mail"
-               required="required"
              onChange={this.onEmailChange}/>
           </div>
           <div className="mv3">
-            <label htmlFor="password"><i className="fas fa-lock"></i></label>
+            <i class="fas fa-lock"></i>
             <input className="b  pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100 superBox"
               type="password"
                name="password"
-               required="required"
                placeholder="Password"
                 id="password"
               onChange={this.onPasswordChange}/>
           </div>
         </fieldset>
         <div className="">
-          <input className="b br3 ph3 pv2 input-reset bn shadow-3 white bg-blue grow pointer f4 dib"
+          <input className="b br3 ph3 pv2 input-reset bn white bg-blue grow pointer f4 dib"
             type="submit"
             value="Sign in"
+            onClick={this.onSubmitLogin}
             />
         </div>
         <div className="mv3">
 
           <span className="f4">Or</span><br/><br/>
 
-          <Link    className="b br3 ph3 pv2ba blue  grow pointer f4 dib"
-              to="/Register">Sign Up</Link>
+          <Link to="/register" className="link underline blue hover-orange" >Sign Up</Link>
 
         </div>
       </main>
       <div>{this.state.loginToHome === true && < Redirect to = '/home' />}</div>
-    </form></div>);
+    </article></div>);
   }
 }
 
