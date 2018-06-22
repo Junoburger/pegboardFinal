@@ -1,7 +1,7 @@
 import React from 'react'
 
 export class LoginClass {
-  constructor(email, password, name) {
+  constructor(email, password, name, dateOfBirth, phoneNumber, bio, website, image) {
 
     this.Id = getRandomInt(10000000),
     this.body = {
@@ -9,6 +9,11 @@ export class LoginClass {
       email: email,
       password: password,
       name: name,
+      dateOfBirth: dateOfBirth,
+      phoneNumber: phoneNumber,
+      bio: bio,
+      website: website,
+      image: image,
       notification: {
         posts:[],
         match: [],

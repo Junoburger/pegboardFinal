@@ -53,6 +53,7 @@ class UserContainer extends React.PureComponent {
           </div>
           <div className="userInfo">
             <p className='name'>{ this.props.user[this.props.match.params.userid].name }</p>
+
             <p> {this.props.user[this.props.match.params.userid].bio}</p>
             { this.props.match.params.accepted==='true'  && <p>{this.props.user[this.props.match.params.userid].phoneNumber}</p> }
             <p className='website'>{this.props.user[this.props.match.params.userid].website}</p>
@@ -60,7 +61,6 @@ class UserContainer extends React.PureComponent {
 
             <p>Amsterdam/NL</p>
           </div>
-
 
         </div>
 

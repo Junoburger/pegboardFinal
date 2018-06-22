@@ -58,7 +58,9 @@ class PostContainer extends React.PureComponent {
           <Link to={'/'} onClick={this.props.logOut} className="postLink logout"> Log Out </Link>
         </div>
 
-        <img src={logo} alt="PegBoardLogo" className="postLogo"/>
+        <div className="postLogoContainer">
+          <img src={logo} alt="PegBoardLogo" className="postLogo"/>
+        </div>
 
         <h3>Use the form below to create a post!</h3>
 
@@ -71,13 +73,19 @@ class PostContainer extends React.PureComponent {
               <div className="postForm">
 
                   <div className="formFlex">
-                    <h3 className="form-inline">I am a:</h3>
+                    <h3 className="form-inline iAmA">I am a:</h3>
                   </div>
 
-                  <div className="formFlex">
-                    <p className="form-inline">Employer <input type="radio" name="type" value="employer" onChange={this.handleChange}/></p>
+                  <div className="formFlex categoryContainer">
 
-                    <p className="form-inline">Freelancer <input type="radio" name="type" value="freelancer" onChange={this.handleChange}/></p>
+                    <div className="radioButton">
+                      <p className="form-inline">Employer <input type="radio" name="type" value="employer" onChange={this.handleChange}/></p>
+                    </div>
+
+                    <div className="radioButton">
+                      <p className="form-inline">Freelancer <input type="radio" name="type" value="freelancer" onChange={this.handleChange}/></p>
+                    </div>
+
                   </div>
 
               </div>
@@ -87,17 +95,20 @@ class PostContainer extends React.PureComponent {
               <div className="postForm">
 
                 <div className="formFlex">
-                  <h3 className="form-inline">Job Category:</h3>
+                  <h3 className="form-inline jobCategory">Job Category:</h3>
                 </div>
 
-                <div className="formFlex">
-                  <p className="form-inline">Carpenter <input type="radio" name="category" value="carpenter" onChange={this.handleChange}/></p>
+                <div className="formFlex categoryContainer">
+                  {/* <p className="form-inline">Carpenter <input type="radio" name="category" value="carpenter" onChange={this.handleChange}/></p> */}
 
-                  <p className="form-inline">Designer <input type="radio" name="category" value="designer" onChange={this.handleChange}/></p>
+                  <div className="radioButton">
+                    <p className="form-inline">Designer <input type="radio" name="category" value="designer" onChange={this.handleChange}/></p>
+                  </div>
 
-                  <p className="form-inline">Cook <input type="radio" name="category" value="cook" onChange={this.handleChange}/></p>
-
-                  <p className="form-inline">Developer <input type="radio" name="category" value="developer" onChange={this.handleChange}/></p>
+                  {/* <p className="form-inline">Cook <input type="radio" name="category" value="cook" onChange={this.handleChange}/></p> */}
+                  <div className="radioButton">
+                    <p className="form-inline">Developer <input type="radio" name="category" value="developer" onChange={this.handleChange}/></p>
+                  </div>
                 </div>
 
               </div>

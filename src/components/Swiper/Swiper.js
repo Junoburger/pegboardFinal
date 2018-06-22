@@ -2,37 +2,19 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import './swiper.css'
 import {Link, Redirect} from 'react-router-dom';
-
+import Slide from './Slide'
+import SwipeableViews from 'react-swipeable-views';
 
 class Swiper extends Component {
 
   state = {
     index: 0,
-    flag: false
+    flag: false,
+    holder:[]
+
   }
 
-  increment = (holder) => {
-
-    if (this.state.index < holder.length - 1) {
-      this.setState({
-        index: this.state.index + 1
-      })
-      this.props.makeRequest({
-        requesterId: this.props.user.logUser,
-        ...holder[this.state.index]
-      })
-    } else {
-      this.setState({flag: true})
-    }
-  }
-
-  decline = () => {
-    this.setState({
-      index: this.state.index + 1
-    })
-  }
-
-  render() {
+  componentDidMount(){
     const category = this.props.matchParams.category
 
     let type = this.props.matchParams.type
@@ -43,13 +25,45 @@ class Swiper extends Component {
       type = 'freelancer'
     }
 
+    this.setState({
+      holder: this.props.user.posts[category][type].filter((x) => x.posterId !== this.props.user.logUser)
+    })
+
+  }
+
+  increment = (index) => {
+      this.setState({
+        index: index
+      })
+  }
+
+  decline = () => {
+    console.log(this.state.holder)
+    let arr = [...this.state.holder]
+    const arr2 = ['a','s','f']
+    console.log(arr2)
+    console.log(arr2.splice(1,1))
+
+
+  }
+
+makerequets = (holder)=> {
+  console.log(this.state.index)
+  this.props.makeRequest({
+    requesterId: this.props.user.logUser,
+    ...holder[this.state.index]
+  })
+}
+
+
+  render() {
+
+
+
     if (this.state.flag) {
       return <Redirect to={'/home'}></Redirect>
     }
 
-    console.log(this.type)
-
-    const holder = this.props.user.posts[category][type].filter((x) => x.posterId !== this.props.user.logUser)
 
     return (<div className="main mw5 mw7-ns center bg-light-gray pa3 ph5-ns measure-narrow">
 
@@ -57,10 +71,9 @@ class Swiper extends Component {
 
         {
           <div className="fl w-60 ba">
-
-              <h1 key={holder[this.state.index].posterId}>{holder[this.state.index].postBody.description}</h1>
-              <button className="dislike-button fl w-10 bg-washed-red br3 grow" onClick={this.decline}>Dislike</button>
-              <button className="like-button fl w-10 bg-washed-green br3 grow" onClick={() => this.increment(holder)}>Like</button>
+              <Slide users={this.props.users} data={this.state.holder} increment={this.increment}/> {/* <h1 key={holder[this.state.index].posterId}>{holder[this.state.index].postBody.description}</h1> */}
+              <button className="dislike-button fl w-30 bg-washed-red br3 grow" >Dislike</button>
+              <button className="like-button fl w-30 bg-washed-green br3 grow" onClick={() => this.makerequets(this.state.holder)} >Like</button>
             </div>
         }
 
@@ -69,4 +82,8 @@ class Swiper extends Component {
   }
 }
 
-export default Swiper;
+const mapStateToProps = (state) => {
+  return {users: state.users}
+}
+
+export default connect(mapStateToProps)(Swiper)
