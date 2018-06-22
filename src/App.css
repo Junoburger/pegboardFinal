@@ -1,16 +1,14 @@
 .App {
-
   display: flex;
   flex-flow: column;
-  align-items: center;
   justify-content: center;
-
-
+  align-items: center;
 }
 @media screen and (min-width: 1078px) {
   .container {
     width: 90%;
   }
+
 
 }
 
@@ -42,4 +40,3 @@
 .fas{
   font-size: 18pt;
 }
-

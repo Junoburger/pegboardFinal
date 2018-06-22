@@ -50,6 +50,7 @@ const users = {
  3: {
    userId: 3,
    name: 'carlos',
+   email: 'carlos@email.com',
    notification: {
      match: [],
      request: [],
@@ -59,6 +60,7 @@ const users = {
  4: {
    userId: 4,
    name: 'fernadndo',
+   email: 'fernando@emial.com',
    notification: {
      match: [],
      request: [],
@@ -95,7 +97,7 @@ export default(state = users, action = {}) => {
      const Post = JSON.parse(JSON.stringify(state))
      Post[action.payload.posterId].notification.posts.push(action.payload)
      return Post
-  
+
    default:
      return state
  }

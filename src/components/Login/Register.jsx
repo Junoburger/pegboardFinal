@@ -8,8 +8,6 @@ import { LogUser } from '../../actions/users'
 import './LoginStyle.css'
 import logo from '../../images/pegboard.png'
 
-
-
 class Register extends React.Component {
   state = {
     loginToHome: false
@@ -23,79 +21,102 @@ class Register extends React.Component {
   onPasswordChange = (event) => {
     this.setState({password: event.target.value})
   }
-  onSubmitLogin = () => {
-    const user = new LoginClass(this.state.email,this.state.password,this.state.name)
-    // console.log(user)
-    this.props.LogUser(user.Id)
-    this.props.newUser(user)
-    this.setState({loginToHome: true})
 
+  onSubmitLogin = (e) => {
+    e.preventDefault()
+    const user = new LoginClass(this.state.email,this.state.password,this.state.name)
+
+      this.props.LogUser(user.Id)
+      this.props.newUser(user)
+      this.setState({loginToHome: true})
 
   }
   render() {
 
-    return (<div className="shape">
-      <img src={logo} alt="PegBoardLogo" className="Logo"/><br/><br/>
+   return (
 
-      <span className="Slogan">Your career switch</span>
+     <div className="shape">
+     <form  onSubmit={this.onSubmitLogin} className="br3  b--black-10 mv4 w-100 mw6 sqrComp center">
+       <img src={logo} alt="PegBoardLogo" className="Logo"/><br/><br/>
 
-      <article className="br3  b--black-10 mv4 w-100 mw6 sqrComp center">
-
-      <main className="pa4 black-80">
-        <div className="measure">
-          <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-            <legend style={{backgroundColor:'rgba(255, 255, 255, 0.47)', padding:'20px',borderRadius: '20px'}}
-               className="f1 fw6 ph0 mh0">Register</legend>
-            <div className="mt3">
-              <i class="far fa-user"></i>
-              <input
-                className="pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100 superBox"
-                type="text"
-                name="name"
-                placeholder="Name"
-
-                id="name"
-                onChange={this.onNameChange}/>
+       <span className="Slogan">The Place For Freelance Jobs</span>
+     <main className="pa4 black-80">
+       <div className="measure">
+         <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
+           <legend style={{backgroundColor:'rgba(255, 255, 255, 0.47)', padding:'20px',borderRadius: '20px'}}
+              className="f1 fw6 ph0 mh0">Register</legend>
+           <div className="mt3">
+             <i className="far fa-user"></i>
+             <input
+               className="pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100 superBox"
+               type="text"
+               name="name"
+               placeholder="Name"
+               required="required"
+               autoComplete="off"
+               id="name"
+               onChange={this.onNameChange}/>
+           </div>
+           <div className="mt3">
+             <i class="fas fa-birthday-cake"></i>
+             <input type="date"
+               name="dateOfBirth"
+               min="2000-01-02"
+               className="pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100 superBox "
+               required="required"
+               placeholder="Date Of Birth"
+             />
             </div>
-            <div className="mt3">
-              <i class="far fa-envelope"></i>
-              <input
-                className="pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100 superBox "
-                type="email"
-                 name="email-address"
-                  id="email-address"
-                  placeholder="E-mail"
-                  onChange={this.onEmailChange}/>
-            </div>
-            <div className="mv3">
-              <i class="fas fa-lock"></i>
-              <input className="b  pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100  superBox"
-                type="password"
-                name="password"
-                id="password"
-                placeholder="Password"
-                 onChange={this.onPasswordChange}/>
-            </div>
-          </fieldset>
-          <div className="">
-            <input className="b br3 ph3 pv2 input-reset ba white bg-green grow pointer f4 dib"
-              type="submit"
-              value="Register"
-              onClick={this.onSubmitLogin}/>
+           <div className="mt3">
+             <i className="far fa-envelope"></i>
+             <input
+               className="pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100 superBox "
+               type="email"
+                name="email-address"
+                 id="email-address"
+                 autoComplete="off"
+                 placeholder="E-mail"
+                 required="required"
+                 onChange={this.onEmailChange}/>
+           </div>
+           <div className="mt3">
+             <i class="fas fa-mobile-alt"></i>
+             <input type="text"
+               name="phoneNumber"
+               className="pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100 superBox "
+               pattern="(^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)"
+               placeholder="Phone Number"
+             />
           </div>
+           <div className="mv3">
+             <i className="fas fa-lock"></i>
+             <input className="b  pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100  superBox"
+               type="password"
+               name="password"
+               id="password"
+               required="required"
+               placeholder="Password"
+                onChange={this.onPasswordChange}/>
+           </div>
+           </fieldset>
+           <div className="">
+           <input className="b br3 ph3 pv2 input-reset bn shadow-3 white bg-blue grow pointer f4 dib"
+             type="submit"
+             value="Sign Up"
+            />
+         </div>
 
-        </div>
-        <br/>
-        <Link className="link underline green hover-orange" to="/">Already A Member?</Link>
+       </div>
+       <br/>
+       <Link className="link underline blue hover-orange" to="/">Already A Member?</Link>
 
-      </main>
-      <div>{this.state.loginToHome === true && < Redirect to = '/home' />}</div>
-
-    </article>
+     </main>
+     <div>{this.state.loginToHome === true && < Redirect to = '/home' />}</div>
+   </form>
 </div>
-  );
-  }
 
+ );
+ }
 }
 
 const mapStateToProps = (state) => {return {reducers: state.reducers}}
