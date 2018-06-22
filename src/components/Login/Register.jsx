@@ -50,7 +50,7 @@ class Register extends React.Component {
      <main className="pa4 black-80">
        <div className="measure">
          <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-           <legend style={{backgroundColor:'rgba(255, 255, 255, 0.47)', padding:'20px',borderRadius: '20px'}}
+           <legend style={{backgroundColor:'rgba(255, 255, 255, 0.47)', padding:'20px',borderRadius: '10px' , fontSize:'12pt'}}
               className="f1 fw6 ph0 mh0">Register</legend>
            <div className="mt3">
              <i className="far fa-user"></i>
@@ -64,18 +64,7 @@ class Register extends React.Component {
                id="name"
                onChange={this.onNameChange}/>
            </div>
-           <div className="mt3">
-             <i className="fas fa-birthday-cake"></i>
-             <input type="date"
-               name="dateOfBirth"
-               max="2000-01-02"
-               className="pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100 superBox "
-               required="required"
-               placeholder="Date Of Birth"
-               onChange={this.onDateOfBirthChange}/>
 
-
-            </div>
            <div className="mt3">
              <i className="far fa-envelope"></i>
              <input
@@ -88,18 +77,7 @@ class Register extends React.Component {
                  required="required"
                  onChange={this.onEmailChange}/>
            </div>
-           <div className="mt3">
-             <i className="fas fa-mobile-alt"></i>
-             <input type="text"
-               name="phoneNumber"
-               className="pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100 superBox "
-               // pattern="[0-9]"
-               maxLength="15"
-               placeholder="Phone Number"
-               onChange={this.onPhoneNumberChange}/>
 
-
-          </div>
            <div className="mv3">
              <i className="fas fa-lock"></i>
              <input className="b  pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100  superBox"
@@ -111,8 +89,10 @@ class Register extends React.Component {
                 onChange={this.onPasswordChange}/>
            </div>
            </fieldset>
+           <small> By Signing up, I agree to PegBoard <b>Term of Service</b> and <b>Privacy Policy</b></small><br/><br/>
            <div className="">
-           <input className="b br3 ph3 pv2 input-reset bn shadow-3 white bg-blue grow pointer f4 dib"
+           <input style={{backgroundColor: 'rgb(64, 138, 180)'}}
+             className="b br3 ph3 pv2 input-reset bn shadow-3 white grow pointer f4 dib"
              type="submit"
              value="Sign Up"
             />
@@ -120,7 +100,7 @@ class Register extends React.Component {
 
        </div>
        <br/>
-       <Link className="link underline blue hover-orange" to="/">Already A Member?</Link>
+       <Link style={{color:'rgb(64, 138, 180)'}} className="link underline hover-blue" to="/">Already A Member?</Link>
 
      </main>
      <div>{this.state.loginToHome === true && < Redirect to = '/home' />}</div>
