@@ -63,6 +63,13 @@
 	font-weight:		bold;
 }
 
+.jobCategory {
+  padding-top: 45px;
+}
+
+.iAmA {
+  padding-top: 40px;
+}
 
 .categoryButton {
  text-transform: capitalize;
@@ -74,4 +81,14 @@
 
 .categoryButtonContainer {
   padding: 20px;
+}
+
+.categoryContainer {
+  background-color: rgb(64, 138, 180);
+  padding: 10px;
+}
+
+.radioButton {
+  background-color: #65C6C4;
+  border-radius: 25px;
 }

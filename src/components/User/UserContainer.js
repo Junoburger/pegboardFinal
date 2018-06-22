@@ -36,13 +36,14 @@ class UserContainer extends React.PureComponent {
           <div className="userInfo">
             <p className='name'>{ this.props.user[this.props.match.params.userid].name }</p>
             <p> Recruiter at GOT startup</p>
-            <p>06-12400595</p>
-            <p>'http://www.mariagot.com'</p>
+            <p>{ this.props.user[this.props.match.params.userid].website }</p>
             <p>Amsterdam/Netherlands</p>
           </div>
-
-          { this.props.match.params.accepted==='true'  && <p>{this.props.user[this.props.match.params.userid].email}</p> }
-
+          <div className="secretInfo">
+            <h1>Contact Information</h1>
+            { this.props.match.params.accepted==='true'  && <p>{this.props.user[this.props.match.params.userid].email}</p> }
+            { this.props.match.params.accepted==='true'  && <p>{this.props.user[this.props.match.params.userid].phoneNumber}</p> }
+          </div>
         </div>
 
       </div>
