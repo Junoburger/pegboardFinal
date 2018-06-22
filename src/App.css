@@ -4,37 +4,38 @@
   justify-content: center;
   align-items: center;
 }
+
 @media screen and (min-width: 1078px) {
   .container {
     width: 90%;
   }
-
-
 }
 
-.App-container{
+.App-container {
   text-align: center;
 }
 
-.Login{
+.Login {
   background-color: rgba(255, 255, 255, 0.87);
   border-bottom: #408AB4 dotted 5px;
   border-top: #408AB4 dotted 5px;
 }
+
 .Logo {
   width: 160px;
   border-radius: 20px;
   box-shadow: 0px 5px 20px rgb(135, 130, 120);
-
 }
 
 .formElement {
   display: flex;
   justify-content: center;
 }
-.far{
+
+.far {
   font-size: 18pt;
 }
-.fas{
+
+.fas {
   font-size: 18pt;
 }

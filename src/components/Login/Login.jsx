@@ -52,7 +52,7 @@ if(userLogin.length === 1){
         <span className="Slogan">The Place For Freelance Jobs</span>
       <main className="pa4 black-80">
         <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-          <legend style={{backgroundColor:'rgba(255, 255, 255, 0.47)', padding:'20px',borderRadius: '20px'}} className="f1 fw6 ph0 mh0">Sign In</legend>
+          <legend style={{backgroundColor:'rgba(255, 255, 255, 0.47)', padding:'10px',borderRadius: '20px', fontSize:'12pt'}} className="f1 fw6 ph0 mh0">Sign In</legend>
           <div className="mt3">
             <label htmlFor="email"><i className="far fa-envelope"></i></label>
             <input className="b  pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100 superBox"
@@ -75,7 +75,7 @@ if(userLogin.length === 1){
           </div>
         </fieldset>
         <div className="">
-          <input className="b br3 ph3 pv2 input-reset bn shadow-3 white bg-blue grow pointer f4 dib"
+          <input style={{backgroundColor: 'rgb(64, 138, 180)'}} className="b br3 ph3 pv2 input-reset bn shadow-3 white bg-blue grow pointer f4 dib"
             type="submit"
             value="Sign in"
             />
@@ -84,7 +84,7 @@ if(userLogin.length === 1){
 
           <span className="f4">Or</span><br/><br/>
 
-          <Link    className="b br3 ph3 pv2ba blue  grow pointer f4 dib"
+          <Link style={{color:'rgb(64, 138, 180)'}} className="b br3 ph3 pv2ba blue grow pointer  dib"
               to="/Register">Sign Up</Link>
 
         </div>
