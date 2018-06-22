@@ -58,7 +58,9 @@ class PostContainer extends React.PureComponent {
           <Link to={'/'} onClick={this.props.logOut} className="postLink logout"> Log Out </Link>
         </div>
 
-        <img src={logo} alt="PegBoardLogo" className="postLogo"/>
+        <div className="postLogoContainer">
+          <img src={logo} alt="PegBoardLogo" className="postLogo"/>
+        </div>
 
         <h3>Use the form below to create a post!</h3>
 

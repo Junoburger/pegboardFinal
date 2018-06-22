@@ -1,6 +1,11 @@
 .postLogo {
   width: 150px;
   border-radius: 20px;
+  text-align: center;
+}
+
+.postLogoContainer {
+  text-align: center;
 }
 
 .linkContainer {
