@@ -1,17 +1,26 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { logOut } from '../../actions/users'
+import {Link, Redirect} from 'react-router-dom'
 import userBk from '../../images/userBk.png'
 import homeBtn from '../../images/homeButton.png'
 import './user.css'
 
 
 class UserContainer extends React.PureComponent {
-
+  state = {switched: false}
   componentDidMount() {
     // console.log(this.props)
   }
 
+  logSwitch = () => {
+    setTimeout(()=> { this.setState({
+    switched: true
+  })
+  this.props.logOut()}, 600);
+
+
+  }
   render() {
 
 
@@ -29,7 +38,9 @@ class UserContainer extends React.PureComponent {
           </ul>
           <div className="logContainer">
             <span className= "log">LOG OUT</span>
-            <Link to={'/'} onClick={this.props.logOut} className="postLink logout"><label className={"switch"}><input type={"checkbox"}/><span className={"slider round"}></span></label></Link>
+            <div onClick ={this.logSwitch} className="logOut"><label className={"switch"}><input type={"checkbox"}/><span className={"slider round"}></span></label></div>
+            {this.state.switched &&  <Redirect to='/'></Redirect>}
+
           </div>
         </div>
 
@@ -64,4 +75,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {  })(UserContainer)
+export default connect(mapStateToProps, { logOut  })(UserContainer)

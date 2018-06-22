@@ -5,7 +5,7 @@ import Notifications from './Notifications'
 import {makeRequest, makeMatch} from '../../actions/users'
 import notificationImg from '../../images/pegBoardNotifications.png'
 import { logOut } from '../../actions/users'
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 
 const r = {
   requesterId:3,
@@ -18,18 +18,23 @@ const r = {
 }
 
 class NotificationsContainer extends React.PureComponent {
+  state = {switched: false}
 
 
-  componentDidMount(){
-
-
-  }
 
   acceptRequest = (req)=> {
     this.props.makeMatch(req)
 
   }
 
+  logSwitch = () => {
+    setTimeout(()=> { this.setState({
+    switched: true
+  })
+this.props.logOut()}, 600);
+
+
+  }
 
   render() {
 
@@ -37,12 +42,14 @@ class NotificationsContainer extends React.PureComponent {
     return <div className="container">
     <div className="header">
     <ul className="breadcrumb">
-      <li><Link to={'/Home'}>Home</Link></li>
+      <li><Link to={'/'}>Home</Link></li>
       <li>Reactions</li>
     </ul>
     <div className="logContainer">
       <span className= "log">LOG OUT</span>
-      <Link to={'/Home'}  className="postLink logout"><label className={"switch"}><input type={"checkbox"}/><span className={"slider round"}></span></label></Link>
+      <div onClick ={this.logSwitch} className="logOut"><label className={"switch"}><input type={"checkbox"}/><span className={"slider round"}></span></label></div>
+      {this.state.switched &&  <Redirect to='/'></Redirect>}
+
     </div>
     </div>
 

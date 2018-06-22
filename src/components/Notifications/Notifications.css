@@ -177,6 +177,7 @@
   display: inline-block;
   width: 40px;
   height: 14px;
+  margin-right: 2px;
 }
 
 /* Hide default HTML checkbox */
@@ -231,9 +232,13 @@ input:checked + .slider:before {
 }
 
 .log {
-  padding-right: 27px;
+  padding-right: 0;
   font-size: 10px;
+  margin-bottom: 3px;
 }
+
+
+.
 
 
 
