@@ -35,14 +35,17 @@ const styles = {
 function Slide(props) {
   const holder = props.data
   return (
-    <div className="App">
-    <SwipeableViews  enableMouseEvents onChangeIndex ={(index, indexLatest, meta)=> {props.increment(index)}}>
+    <div>
+    <SwipeableViews  enableMouseEvents onChangeIndex={(index, indexLatest, meta)=> {props.increment(index)}}>
 
       {holder.map((user, index) => { return(
         <div style={Object.assign({}, styles.slide, styles[index])}>
-        <div className="border-div" />
-        <img src={logFade} width="250px" alt="PegBoardLogo" />
-        <img src={props.users[user.posterId].image} className="userImage" />
+
+        <div className="border-div">
+          <img src={logFade} alt="PegBoardLogo" className="pegboardUserImage"/>
+          <img src={props.users[user.posterId].image} className="userImage" />
+        </div>
+
         <h2>{props.users[user.posterId].name}</h2>
         <h2>{props.users[user.posterId].email}</h2>
       </div>) })}

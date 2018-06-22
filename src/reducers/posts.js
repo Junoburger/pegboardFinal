@@ -77,23 +77,82 @@ const posts = {
             description: 'looking for a designer',
             category: 'designing'
           }
+        },
+        {
+          posterId: 6,
+          postBody: {
+            postId:1,
+            description: 'also looking for a designer',
+            category: 'designing'
+          }
         }
       ],
-      freelancer: [{
-        posterId: 1,
-        postBody: {
-          postId:1,
-          description: 'looking for a design job',
-          category: 'designing'
+      freelancer: [
+        {
+          posterId: 1,
+          postBody: {
+            postId:1,
+            description: 'looking for a design job',
+            category: 'designing'
+          }
+        },
+        {
+          posterId: 5,
+          postBody: {
+            postId:1,
+            description: 'looking for a design job, im really good',
+            category: 'designing'
+          }
         }
-      }]
+    ]
     },
     cook: {
       employer:[],
       freelancer: []
     },
     developer: {
-      employer:[],
-      freelancer: []
+      employer:[
+        {
+          posterId: 3,
+          postBody: {
+            postId:1,
+            description: 'looking for a developer',
+            category: 'developer'
+          }
+        },
+        {
+          posterId: 2,
+          postBody: {
+            postId:1,
+            description: 'looking for a new developer to join our project',
+            category: 'developer'
+          }
+        }
+    ],
+      freelancer: [{
+        posterId: 1,
+        postBody: {
+          postId:1,
+          description: 'person 1 looking for developer job',
+          category: 'developer'
+        }
+      },
+      {
+        posterId: 2,
+        postBody: {
+          postId:1,
+          description: 'person 2 looking for developer job',
+          category: 'developer'
+        }
+      },
+      {
+        posterId: 6,
+        postBody: {
+          postId:1,
+          description: 'person 6 looking for developer job',
+          category: 'developer'
+        }
+      }
+    ]
     }
   }

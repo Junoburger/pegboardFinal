@@ -53,7 +53,7 @@ class PostContainer extends React.PureComponent {
 
         <div className="linkContainer">
           <Link to={'/Notifications'} className="postLink notification"> Notifications </Link>
-          <Link to={'/User/1/false'} className="postLink"> Profile </Link>
+          <Link to={`/User/${this.props.logUser}/false`} className="postLink"> Profile </Link>
 
           <Link to={'/'} onClick={this.props.logOut} className="postLink logout"> Log Out </Link>
         </div>

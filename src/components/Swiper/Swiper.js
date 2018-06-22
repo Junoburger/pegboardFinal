@@ -61,7 +61,6 @@ class Swiper extends Component {
 
        {
         <div className="card">
-
             <Slide users={this.props.users} data={this.state.holder} increment={this.increment}/>
           </div>
 
