@@ -15,7 +15,7 @@
 
 .postLink:hover {
   text-decoration: none;
-  color: blue;
+  color: rgb(255, 52, 52);
 }
 
 .notification {

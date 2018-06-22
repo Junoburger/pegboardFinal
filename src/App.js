@@ -18,13 +18,13 @@ class App extends Component {
         <div className="App">
 
       <div className="Login">
-        <Route exact="exact" path="/" component={Login}/>
+        <Route exact path="/" component={Login}/>
         <Route path="/Register" component={Register}/>
       </div>
-      <Route exact="exact" path="/home" component={PostContainer}/>
-      <Route exact="exact" path="/matcher/:category/:type" component={SwiperContainer}/>
-      <Route exact="exact" path="/Notifications" component={NotificationsContainer}/>
-      <Route exact="exact" path="/User/:userid/:accepted" component={UserContainer}/>
+      <Route exact path="/home" component={PostContainer}/>
+      <Route exact path="/matcher/:category/:type" component={SwiperContainer}/>
+      <Route exact path="/Notifications" component={NotificationsContainer}/>
+      <Route exact path="/User/:userid/:accepted" component={UserContainer}/>
 
     </div></div>);
   }

@@ -16,7 +16,24 @@
 }
 .Slogan{
   font-size: 18pt;
-  background-color:white;
   border-radius: 20px;
   padding:10px;
+}
+
+.superBox:focus {
+  border-bottom:3px solid rgb(23, 129, 215);
+  transition: 0.1s;
+}
+
+.far{
+  float: left;
+  top: 30px;
+  left:-20px;
+  position: relative;
+}
+.fas{
+  float: left;
+  top: 30px;
+  left:-20px;
+  position: relative;
 }

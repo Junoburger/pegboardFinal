@@ -1,24 +1,29 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 
+import './user.css'
+
 export default function User(props) {
 
   console.log(props)
 
   return (
 
-
     <div className="userMain">
 
-      <Link to={'/home'}> Back </Link>
+      <div className="homeLink">
+        <Link to={'/home'} > Back </Link>
+      </div>
 
       <div className="displayUser">
 
-        <h1>Param User: {props.matchParams.userid}</h1>
-        <h1>Accepted: {props.matchParams.accepted}</h1>
+        <div className="userInfo">
+          <h1>Name: { props.properties.user.users[props.properties.match.params.userid].name }</h1>
+          <h1>User ID: { props.properties.user.users[props.properties.match.params.userid].userId }</h1>
+        </div>
 
-
-        <h1>Array User: {props.properties.user.users.userId}</h1>
+        {/* CHANGE THIS TO TRUE WHEN LINKED WITH NOTIFICATIONS PAGE */}
+        <h1>{ props.isAccepted === false && props.properties.user.users[props.properties.match.params.userid].email }</h1>
 
       </div>
 
