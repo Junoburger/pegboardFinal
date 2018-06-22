@@ -18,13 +18,20 @@ class Register extends React.Component {
   onEmailChange = (event) => {
     this.setState({email: event.target.value})
   }
+  onDateOfBirthChange = (event) => {
+    this.setState({dateOfBirth: event.target.value})
+  }
+  onPhoneNumberChange = (event) => {
+    event.preventDefault()
+    this.setState({phoneNumber: event.target.value})
+  }
   onPasswordChange = (event) => {
     this.setState({password: event.target.value})
   }
 
   onSubmitLogin = (e) => {
     e.preventDefault()
-    const user = new LoginClass(this.state.email,this.state.password,this.state.name)
+    const user = new LoginClass(this.state.email,this.state.password,this.state.name,this.state.dateOfBirth,this.state.phoneNumber,this.state.bio, this.state.website, this.state.image)
 
       this.props.LogUser(user.Id)
       this.props.newUser(user)
@@ -58,14 +65,16 @@ class Register extends React.Component {
                onChange={this.onNameChange}/>
            </div>
            <div className="mt3">
-             <i class="fas fa-birthday-cake"></i>
+             <i className="fas fa-birthday-cake"></i>
              <input type="date"
                name="dateOfBirth"
-               min="2000-01-02"
+               max="2000-01-02"
                className="pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100 superBox "
                required="required"
                placeholder="Date Of Birth"
-             />
+               onChange={this.onDateOfBirthChange}/>
+
+
             </div>
            <div className="mt3">
              <i className="far fa-envelope"></i>
@@ -80,13 +89,16 @@ class Register extends React.Component {
                  onChange={this.onEmailChange}/>
            </div>
            <div className="mt3">
-             <i class="fas fa-mobile-alt"></i>
+             <i className="fas fa-mobile-alt"></i>
              <input type="text"
                name="phoneNumber"
                className="pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100 superBox "
-               pattern="(^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)"
+               // pattern="[0-9]"
+               maxLength="15"
                placeholder="Phone Number"
-             />
+               onChange={this.onPhoneNumberChange}/>
+
+
           </div>
            <div className="mv3">
              <i className="fas fa-lock"></i>
