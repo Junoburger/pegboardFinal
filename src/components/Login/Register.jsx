@@ -61,6 +61,17 @@ class Register extends React.Component {
                onChange={this.onNameChange}/>
            </div>
            <div className="mt3">
+             <i class="fas fa-birthday-cake"></i>
+             <input type="date"
+               name="dateOfBirth"
+               min="2000-01-02"
+               className="pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100 superBox "
+               required="required"
+               placeholder="Date Of Birth"
+             />
+</div>
+
+           <div className="mt3">
              <i className="far fa-envelope"></i>
              <input
                className="pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100 superBox "
@@ -72,6 +83,15 @@ class Register extends React.Component {
                  required="required"
                  onChange={this.onEmailChange}/>
            </div>
+           <div className="mt3">
+             <i class="fas fa-mobile-alt"></i>
+             <input type="text"
+               name="phoneNumber"
+               className="pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100 superBox "
+               pattern="(^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)"
+               placeholder="Phone Number"
+             />
+</div>
            <div className="mv3">
              <i className="fas fa-lock"></i>
              <input className="b  pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100  superBox"
