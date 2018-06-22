@@ -12,6 +12,7 @@
   .userMain {
      width: 100vw;
   }
+
 }
 
 .headerUser {
@@ -51,6 +52,7 @@
    border-radius: 50%;
    background-color: red;
    transform: translateX(-50%);
+   overflow: hidden;
  }
 
 
@@ -105,4 +107,30 @@ ul.breadcrumb li a {
 ul.breadcrumb li a:hover {
     color: #01447e;
     text-decoration: underline;
+}
+
+.website {
+  color: blue;
+}
+
+.homeBtn {
+  position: relative;
+  left: -270px;
+  top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 50px;
+  border-radius: 0 10px 10px 0;
+  background-color: #67CAC5;
+
+}
+
+@media screen and (max-width:621px) {
+
+  .homeBtn {
+    position: absolute;
+    left: 0;
+  }
 }

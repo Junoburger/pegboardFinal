@@ -33,16 +33,16 @@ class NotificationsContainer extends React.PureComponent {
 
   render() {
 
-    
+
     return <div className="container">
     <div className="header">
     <ul className="breadcrumb">
       <li><Link to={'/Home'}>Home</Link></li>
-      <li>Notifications</li>
+      <li>Reactions</li>
     </ul>
     <div className="logContainer">
       <span className= "log">LOG OUT</span>
-      <Link to={'/'} onClick={this.props.logOut} className="postLink logout"><label className={"switch"}><input type={"checkbox"}/><span className={"slider round"}></span></label></Link>
+      <Link to={'/Home'}  className="postLink logout"><label className={"switch"}><input type={"checkbox"}/><span className={"slider round"}></span></label></Link>
     </div>
     </div>
 
