@@ -8,7 +8,6 @@ import { LogUser } from '../../actions/users'
 import './LoginStyle.css'
 import logo from '../../images/pegboard.png'
 
-
 class Register extends React.Component {
   state = {
     loginToHome: false
