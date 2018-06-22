@@ -36,9 +36,7 @@ class Register extends React.Component {
 
    return (
 
-
      <div className="shape">
-
      <form  onSubmit={this.onSubmitLogin} className="br3  b--black-10 mv4 w-100 mw6 sqrComp center">
        <img src={logo} alt="PegBoardLogo" className="Logo"/><br/><br/>
 
@@ -69,8 +67,7 @@ class Register extends React.Component {
                required="required"
                placeholder="Date Of Birth"
              />
-</div>
-
+            </div>
            <div className="mt3">
              <i className="far fa-envelope"></i>
              <input
@@ -91,7 +88,7 @@ class Register extends React.Component {
                pattern="(^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)"
                placeholder="Phone Number"
              />
-</div>
+          </div>
            <div className="mv3">
              <i className="fas fa-lock"></i>
              <input className="b  pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100  superBox"
@@ -102,13 +99,12 @@ class Register extends React.Component {
                placeholder="Password"
                 onChange={this.onPasswordChange}/>
            </div>
-         </fieldset>
-         <div className="">
+           </fieldset>
+           <div className="">
            <input className="b br3 ph3 pv2 input-reset bn shadow-3 white bg-blue grow pointer f4 dib"
              type="submit"
              value="Sign Up"
             />
-
          </div>
 
        </div>
@@ -117,7 +113,6 @@ class Register extends React.Component {
 
      </main>
      <div>{this.state.loginToHome === true && < Redirect to = '/home' />}</div>
-
    </form>
 </div>
 
