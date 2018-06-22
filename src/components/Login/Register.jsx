@@ -23,7 +23,8 @@ class Register extends React.Component {
     this.setState({password: event.target.value})
   }
 
-  onSubmitLogin = () => {
+  onSubmitLogin = (e) => {
+    e.preventDefault()
     const user = new LoginClass(this.state.email,this.state.password,this.state.name)
 
       this.props.LogUser(user.Id)
@@ -48,29 +49,31 @@ class Register extends React.Component {
            <legend style={{backgroundColor:'rgba(255, 255, 255, 0.47)', padding:'20px',borderRadius: '20px'}}
               className="f1 fw6 ph0 mh0">Register</legend>
            <div className="mt3">
-             <i class="far fa-user"></i>
+             <i className="far fa-user"></i>
              <input
                className="pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100 superBox"
                type="text"
                name="name"
                placeholder="Name"
                required="required"
+               autoComplete="off"
                id="name"
                onChange={this.onNameChange}/>
            </div>
            <div className="mt3">
-             <i class="far fa-envelope"></i>
+             <i className="far fa-envelope"></i>
              <input
                className="pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100 superBox "
                type="email"
                 name="email-address"
                  id="email-address"
+                 autoComplete="off"
                  placeholder="E-mail"
                  required="required"
                  onChange={this.onEmailChange}/>
            </div>
            <div className="mv3">
-             <i class="fas fa-lock"></i>
+             <i className="fas fa-lock"></i>
              <input className="b  pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100  superBox"
                type="password"
                name="password"
@@ -81,7 +84,7 @@ class Register extends React.Component {
            </div>
          </fieldset>
          <div className="">
-           <input className="b br3 ph3 pv2 input-reset ba white bg-blue grow pointer f4 dib"
+           <input className="b br3 ph3 pv2 input-reset bn shadow-3 white bg-blue grow pointer f4 dib"
              type="submit"
              value="Sign Up"
             />

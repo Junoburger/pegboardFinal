@@ -54,7 +54,7 @@ if(userLogin.length === 1){
         <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
           <legend style={{backgroundColor:'rgba(255, 255, 255, 0.47)', padding:'20px',borderRadius: '20px'}} className="f1 fw6 ph0 mh0">Sign In</legend>
           <div className="mt3">
-            <label htmlFor="email"><i class="far fa-envelope"></i></label>
+            <label htmlFor="email"><i className="far fa-envelope"></i></label>
             <input className="b  pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100 superBox"
               type="email"
                name="email-address"
@@ -64,7 +64,7 @@ if(userLogin.length === 1){
              onChange={this.onEmailChange}/>
           </div>
           <div className="mv3">
-            <label htmlFor="password"><i class="fas fa-lock"></i></label>
+            <label htmlFor="password"><i className="fas fa-lock"></i></label>
             <input className="b  pa2 input-reset bb bg-transparent hover-bg-transparent hover-black w-100 superBox"
               type="password"
                name="password"
@@ -75,7 +75,7 @@ if(userLogin.length === 1){
           </div>
         </fieldset>
         <div className="">
-          <input className="b br3 ph3 pv2 input-reset bn white bg-blue grow pointer f4 dib"
+          <input className="b br3 ph3 pv2 input-reset bn shadow-3 white bg-blue grow pointer f4 dib"
             type="submit"
             value="Sign in"
             />
