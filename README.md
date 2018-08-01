@@ -1,82 +1,10 @@
-"haaaaaa"
-STORE {
+# Pegboard 
+### Find your match today!
 
-  users {
-    userId:
-    password:
-    name:
-    bio:
-    email:
-    phoneNumber:
-    address:
-    notification:{
-      match: [{
-        type:
-        id:
-      }]
-      request: [{
-        type:
-        id:
-      }]
-    }
-  }
+Pegboard is a tinder-style web application that allows employers and freelancers connect with eachother!
 
-  posts {
-    Carpenter: {
-      employer:[{
-        postId:
-        name:
-        description:
-        categoryId:
-      }]
-      freelancer: [{
-        postId:
-        name:
-        description:
-        categoryId:
-      }]
-    }
-    Designer: {
-      employer:[{
-        postId:
-        name:
-        description:
-        categoryId:
-      }]
-      freelancer: [{
-        postId:
-        name:
-        description:
-        categoryId:
-      }]
-    }
-    Cook: {
-      employer:[{
-        postId:
-        name:
-        description:
-        categoryId:
-      }]
-      freelancer: [{
-        postId:
-        name:
-        description:
-        categoryId:
-      }]
-    }
-    Developer: {
-      employer:[{
-        postId:
-        name:
-        description:
-        categoryId:
-      }]
-      freelancer: [{
-        postId:
-        name:
-        description:
-        categoryId:
-      }]
-    }
-  }
-}
+Built enitrely in React / Redux
+
+Local verison only, you will need to run a docker/postgres database in order to connect
+
+
